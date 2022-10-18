@@ -1,0 +1,14 @@
+.*
+!.gitignore
+*.v12.suo
+*ショートカット
+.sdf
+.suo
+icph
+Debug
+Release
+.vcxproj.user
+bin
+obj
+.vs
+*.lnk
