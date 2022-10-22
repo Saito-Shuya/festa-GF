@@ -122,7 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Prize.vb" />
-    <Compile Include="Json.vb" />
+    <Compile Include="InitSettings.vb" />
     <Compile Include="TopPage.vb">
       <SubType>Form</SubType>
     </Compile>

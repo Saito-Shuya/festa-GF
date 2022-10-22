@@ -97,7 +97,7 @@ Partial Class PrizeTable
         For i = 0 To prizeLength
             Me.labels.Add(New System.Windows.Forms.Label())
             Me.labels(i).AutoSize = True
-            Me.labels(i).BackColor = System.Drawing.Color.White
+            Me.labels(i).BackColor = System.Drawing.Color.Transparent
             Me.labels(i).Font = New System.Drawing.Font("Microsoft Sans Serif", 24.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
             Me.labels(i).Padding = New Padding(30, 0, 0, 0)
             Me.labels(i).Name = "Label" + i.ToString()

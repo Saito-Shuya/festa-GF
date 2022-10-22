@@ -1,5 +1,5 @@
 ﻿Public Class TopPage
-    Dim json As Json = New Json()
+    Dim json As InitSettings = New InitSettings()
     Dim prizeTable = New PrizeTable
 
     Private Sub Init(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -28,7 +28,7 @@
     End Sub
 
     'KeyPressイベントハンドラ
-    Private Sub PrizeNumberTextBoxKeyPressHandler(ByVal sender As Object, ByVal e As KeyPressEventArgs) _
+    Private Sub Toppage_KeyPressEventHandler(ByVal sender As Object, ByVal e As KeyPressEventArgs) _
           Handles PrizeNumberTextBox.KeyPress
 
         'EnterやEscapeキーでビープ音が鳴らないようにする
