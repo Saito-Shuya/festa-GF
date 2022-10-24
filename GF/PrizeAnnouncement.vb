@@ -28,6 +28,6 @@ Public Class PrizeAnnouncement
         Dim workingDir As String = System.Environment.CurrentDirectory
         Dim r As New System.Text.RegularExpressions.Regex("^.*GF\\")
         Dim m As System.Text.RegularExpressions.Match = r.Match(workingDir)
-        PictureBox1.Image = System.Drawing.Image.FromFile(m.Value & "settings\images\" & prizeList(counter - 1))
+        PictureBox1.Image = System.Drawing.Image.FromFile(m.Value & "settings\images\" & prizeList(senderId))
     End Sub
 End Class

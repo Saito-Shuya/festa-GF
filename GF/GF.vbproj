@@ -121,7 +121,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Prize.vb" />
+    <Compile Include="PageSettings.vb" />
     <Compile Include="InitSettings.vb" />
     <Compile Include="TopPage.vb">
       <SubType>Form</SubType>
@@ -210,6 +210,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fuukun-bg-trans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="settings\default\fuukun-bg-trans.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.6\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.6\build\System.Text.Json.targets')" />

@@ -42,13 +42,20 @@ Partial Class FinalPage
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        ' クリスマス用の背景画像を配置
+        If finalPageSeason.Equals("christmas") Or finalPageSeason.Equals("Christmas") Then
+            Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+            ' ハロウィン用の背景画像を配置
+        ElseIf finalPageSeason.Equals("halloween") Or finalPageSeason.Equals("Halloween") Then
+            ' ハロウィン用の画像を用意する
+            Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        End If
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(SCREEN_WIDTH, SCREEN_HEIGHT)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "FianlPage"
-        Me.Text = "FianlPage"
+        Me.Name = "FinalPage"
+        Me.Text = "FinalPage"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

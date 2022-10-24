@@ -31,44 +31,51 @@ Partial Class PrizeAnnouncement
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
 
-        Dim imageWidth = 500
+        Dim imageWidth = prizeImageWidth ' グローバルから画像幅を格納
+        Dim imageHeight = prizeImageHeight ' グローバルから画像高さを格納
 
         '
-        'PictureBox1 商品画像
+        'PictureBox1 景品画像
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(SCREEN_WIDTH / 2 - imageWidth / 2, SCREEN_HEIGHT / 2 - imageWidth / 2)
+
+        Me.PictureBox1.Location = New System.Drawing.Point(SCREEN_WIDTH / 2 - imageWidth / 2, SCREEN_HEIGHT / 2 - imageHeight / 2)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(imageWidth, imageWidth)
+        Me.PictureBox1.Size = New System.Drawing.Size(imageWidth, imageHeight)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
         'Label1　おめでとうございますを表示する
         '
-        Me.Label1.AutoSize = True
-        ' Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.BackColor = System.Drawing.Color.White
-        Me.Label1.Font = New System.Drawing.Font("HGS創英角ﾎﾟｯﾌﾟ体", 65.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label1.Location = New System.Drawing.Point(SCREEN_WIDTH / 2 - 450, SCREEN_HEIGHT - 150) 'だいたい中央ぞろえ
-        ' Me.Label1.Location = New System.Drawing.Point(SCREEN_WIDTH / 2 - 550, SCREEN_HEIGHT - 200) 'ふう君表示の場所
-        Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1507, 131)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "おめでとうございます‼"
+        If (prizeBannerProperties.isShow = True) Then
+            Me.Label1.AutoSize = True
+            ' Me.Label1.BackColor = System.Drawing.Color.Transparent ' 背景透明化
+            Me.Label1.BackColor = System.Drawing.Color.White
+            Me.Label1.Font = New System.Drawing.Font("HGS創英角ﾎﾟｯﾌﾟ体", 65.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+            Me.Label1.Location = New System.Drawing.Point(SCREEN_WIDTH / 2 + prizeBannerProperties.x, SCREEN_HEIGHT + prizeBannerProperties.y)
+            Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+            Me.Label1.Name = "Label1"
+            Me.Label1.Size = New System.Drawing.Size(1507, 131)
+            Me.Label1.TabIndex = 1
+            Me.Label1.Text = "おめでとうございます‼"
+        End If
         '
         'PictureBox3　ふうくん
         '
-        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        ' Me.PictureBox3.Location = New System.Drawing.Point(SCREEN_WIDTH - 500, SCREEN_HEIGHT - 600) ふうくんを表示しない
-        Me.PictureBox3.Location = New System.Drawing.Point(SCREEN_WIDTH - 50000, SCREEN_HEIGHT - 60000)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(480, 428)
-        Me.PictureBox3.TabIndex = 3
-        Me.PictureBox3.TabStop = False
+        ' ふうくんを表示設定にしていれば表示する
+        ' falseになっていれば、非表示にする
+        If (prizeFuukunImageProperties.isShow = True) Then
+            Me.PictureBox3.BackgroundImage = CType(resources.GetObject("fuukun-bg-trans"), System.Drawing.Image)
+            Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+            Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+            Me.PictureBox3.Location = New System.Drawing.Point(SCREEN_WIDTH + prizeFuukunImageProperties.x, SCREEN_HEIGHT + prizeFuukunImageProperties.x) ' ふうくんを表示する
+            Me.PictureBox3.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+            Me.PictureBox3.Name = "PictureBox3"
+            Me.PictureBox3.Size = New System.Drawing.Size(480, 428)
+            Me.PictureBox3.TabIndex = 3
+            Me.PictureBox3.TabStop = False
+        End If
         '
         'Button1 戻る
         '

@@ -29,8 +29,8 @@ Partial Class PrizeTable
     Private Sub invisiblePictureBox(ByVal sender As Object, ByVal e As MouseEventArgs)
         Dim senderPictureBox = CType(sender, PictureBox)
         Dim senderPictureBoxName As String = senderPictureBox.Name
-        Dim id = senderPictureBoxName.Replace("PictureBox", "")
-        Dim senderLabel As Label = Me.labels(id)
+        senderId = senderPictureBoxName.Replace("PictureBox", "") ' グローバルに格納
+        Dim senderLabel As Label = Me.labels(senderId)
 
         senderPictureBox.Image = Nothing
         senderLabel.Visible = False
@@ -89,8 +89,8 @@ Partial Class PrizeTable
             End If
 
             Dim pictureBox As PictureBox = Me.pictureBoxs(i)
-            AddHandler pictureBox.Click, AddressOf DisplayPrize
             AddHandler pictureBox.Click, AddressOf invisiblePictureBox
+            AddHandler pictureBox.Click, AddressOf DisplayPrize
         Next i
 
         ' ラベルを動的に配置

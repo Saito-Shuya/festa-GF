@@ -5,5 +5,15 @@
     Public SCREEN_WIDTH As Integer = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width ' ディスプレイの幅を取得
     Public SCREEN_HEIGHT As Integer = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height '　ディスプレイの高さを取得
 
+    Public prizeImageWidth As String
+    Public prizeImageHeight As String
+    Public prizeFuukunImageProperties As Object
+    Public prizeBannerProperties As Object
+
+    Public finalPageSeason As String
+
+    ' TODO: なるべくグローバルにおかないようにする
+    ' 時短のため、応急処置
+    Public senderId As String ' 押された景品の番号を格納する
 End Module
 
